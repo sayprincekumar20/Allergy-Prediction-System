@@ -32,7 +32,7 @@ This will create a file named allergy_model.pkl that contains the trained model.
 Run the Django Application: Start the Django development server:
 
 bash
-Copy code
+                                              Copy code
 *        python manage.py runserver
 Access the Application: Open a web browser and navigate to http://127.0.0.1:8000/allergy/predict/ to use the application.
 
