@@ -1,0 +1,142 @@
+{% load static %} <!-- Load static files in Django --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy Prediction</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f8;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+            width: 100%;
+        }
+
+        /* Container for form and image */
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the top */
+            max-width: 1200px;
+            margin: 2rem auto; /* Center content */
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Form section */
+        .form-container {
+            flex: 1; /* Use flex property to allow resizing */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column; /* Stack form elements vertically */
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem; /* Added margin for better spacing */
+        }
+
+        select, input[type="number"], input[type="text"], button {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Image section */
+        .image-container {
+            flex: 1.5; /* Ensure image section takes more space */
+            background: url('{% static "img/istockphoto-1231848514-2048x2048.webp" %}') no-repeat center center;
+            background-size: cover;
+            height: 800px; /* Fixed height for the image */
+            border-radius: 10px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .image-container {
+                height: 250px; /* Adjust image height for mobile */
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        Allergy Prediction System
+    </header>
+
+    <!-- Main Content Area: Form on Left, Image on Right -->
+    <div class="container">
+        <!-- Form Side -->
+        <div class="form-container">
+            <h1>Allergy Prediction Form</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+
+        <!-- Image Side -->
+        <div class="image-container"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Allergy Prediction System. All rights reserved.
+    </footer>
+</body>
+</html>
