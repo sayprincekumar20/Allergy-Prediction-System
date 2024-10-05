@@ -4,54 +4,36 @@ The Allergy Prediction System is an end-to-end application developed in Django t
 
 ## Table of Contents
 *     Features
-Technologies Used
-Installation
-Usage
-Dataset
-Model Training
-License
-Features
-Predicts the severity of allergic reactions.
-User-friendly web interface for data input.
-Utilizes a trained Random Forest model for accurate predictions.
-Easy to extend and modify for additional features.
-Technologies Used
-Django: Web framework for building the application.
-Pandas: Data manipulation and analysis.
-Scikit-learn: Machine learning library for model training and evaluation.
-Joblib: For saving and loading the trained model.
-HTML/CSS: Frontend for user interaction.
-Installation
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your_username/allergy_prediction.git
-Navigate to the project directory:
-
-bash
-Copy code
-cd allergy_prediction
-Install the required packages:
-
-bash
-Copy code
-pip install -r requirements.txt
-Ensure that you have the necessary Django settings configured.
-
-Usage
+      Technologies Used
+      Installation
+      Usage
+      Dataset
+      Model Training
+      License
+### Features
+* Predicts the severity of allergic reactions.
+* User-friendly web interface for data input.
+* Utilizes a trained Random Forest model for accurate predictions.
+* Easy to extend and modify for additional features.
+### Technologies Used
+* Django: Web framework for building the application.
+* Pandas: Data manipulation and analysis.
+* Scikit-learn: Machine learning library for model training and evaluation.
+* Joblib: For saving and loading the trained model.
+* HTML/CSS: Frontend for user interaction.
+* 
+### Usage
 Train the Model: Run the following command to train the model and save it:
 
-bash
-Copy code
-python train_model.py
+
+*     python train_model.py
 This will create a file named allergy_model.pkl that contains the trained model.
 
 Run the Django Application: Start the Django development server:
 
 bash
 Copy code
-python manage.py runserver
+*        python manage.py runserver
 Access the Application: Open a web browser and navigate to http://127.0.0.1:8000/allergy/predict/ to use the application.
 
 Dataset
